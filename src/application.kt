@@ -25,26 +25,10 @@ edit setup local dns entry for me.mydomain.com
 edit file C:\Windows\System32\drivers\etc\hosts and add the following line:
 127.0.0.1	me.mydomain.com
 
-Kto project generator: http://ktor.io/quickstart/generator.html
+Ktor project generator: http://ktor.io/quickstart/generator.html
 Note: from the generated files, replace the contents of the folder ../gradle/wrapper with newer versions of gradle-wrapper.* files.
 
-login to https://console.developers.google.com with anton.decraen@unifiedpost.com account
-a new project OAuth2Tester and a OAuth2.0 client (Web client 1) is created with the following settings (in json format):
-
-{
-	"web":
-	{
-		"client_id":"844523080616-lns0d6cq1a1jsq6qo7btb7tkupffojmr.apps.googleusercontent.com",
-		"project_id":"oauth2tester-212111",
-		"auth_uri":"https://accounts.google.com/o/oauth2/auth",
-		"token_uri":"https://www.googleapis.com/oauth2/v3/token",
-		"auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-		"client_secret":"vswO51g3y_XNcMEfQY5DGuKI",
-		"redirect_uris":["http://me.mydomain.com:8080/googleOauth2login"],
-		"javascript_origins":["http://me.mydomain.com:8080"]
-	}
-}
-
+login to https://console.developers.google.com with your google account and create a new project and a OAuth2.0 client for this project
 
 Ktor Http Client:
 from the url https://ktor.io/clients/http-client.html , the supported Ktor HttpClient engines are Apache, CIO, and Jetty.
