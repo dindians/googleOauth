@@ -93,7 +93,7 @@ fun Application.module() {
         authenticate("google-oauth"){
             get(googleAuthorizedRedirectURI) {
                 val principal = call.authentication.principal<OAuthAccessTokenResponse.OAuth2>()?:error("No principal")
-                val json = HttpClient().get<String>("https://www.googleapis.com/userinfo/v2/me") { header("Authorization", "Bearer ${principal.accessToken}") }
+                val json = HttpClient(Apache).get<String>("https://www.googleapis.com/userinfo/v2/me") { header("Authorization", "Bearer ${principal.accessToken}") }
                 val data = ObjectMapper().readValue<Map<String,Any?>>(json)
                 val id = data["id"] as String?
                 if(!id.isNullOrEmpty()){
